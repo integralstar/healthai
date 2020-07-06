@@ -156,6 +156,10 @@ body {
   margin: 0 auto;
 }
 
+.addthis_inline_share_toolbox {
+  margin: 0 auto;
+}
+
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
@@ -179,4 +183,8 @@ body {
     text-align: center;
     color: #35465d;
     margin: 0 auto;
+}
+
+.tip {
+  text-align: center;
 }

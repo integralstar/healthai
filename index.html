@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+        <meta name="description" content="인공지능을 이용한 건강 습관 만들기">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="naver-site-verification" content="9598d0e884181219be3deac3f06c3a65a3d95562" />
-
-        <!-- Bootstrap CSS -->
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-            crossorigin="anonymous"
-        />
-
+        <meta property="og:url" content="https://faceshapeai.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="인공지능을 이용한 건강 체크" />
+        <meta property="og:description"
+            content="인공지능이 얼굴 사진을 분석하고 그 질병의 원인이 될 수 있는 것들에 대한 정보와 개선 방법을 제공합니다." />
         <title>Health AI</title>
-        <link rel="stylesheet" href="style.css" />
-        <!— Go to www.addthis.com/dashboard to customize your tools —>
-        <script
-            type="text/javascript"
-            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02d0a9274c4624"
-        ></script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02d0a9274c4624"></script>
+        <!--JQuery latist-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,10 +55,7 @@
             <h1 class="title">인공 지능 안면 인식을 통한 건강 체크</h1>
             <h2 class="subtitle">건강은 제일의 재산이다 - 에머슨 -</h2>
         </section>
-        <script
-            class="jsbin"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
-		</script>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <div class="file-upload">
             <div class="image-upload-wrap">
                 <input
@@ -77,25 +70,27 @@
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="image" src="#" alt="your face image" />
-                <p class="resultMessage"></p>
-                <div id="label-container"></div>
+                <div id="loading" class="animated bounce">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p class="text-center">인공 지능이 당신의 얼굴을 분석하고 있습니다.</p>
+                </div>
+                <p class="result-message"></p>
+                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
                 <div class="image-title-wrap">
-                    <button type="button" onclick="removeUpload()" class="remove-image">
-                        Remove <span class="image-title">Uploaded Image</span>
+                    <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
+                        <span class="try-again-text">다른 사진으로 다시하기</span>
                     </button>
                 </div>
             </div>
+            <br>
+            <p class="tip">더 정확한 결과를 얻고 싶다면 <b>조명을 고려하여 화장하지 않은 정면 사진</b> 으로 테스트해보세요!</p>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>       
         <div id="disqus_thread"></div>
-        <div class="ad-banner">
-            <ins class="kakao_ad_area" style="display:none;"
-                data-ad-unit    = "DAN-ubguhr7k8yt0"
-                data-ad-width   = "320"
-                data-ad-height  = "100"></ins>
-                <script type="text/javascript" src="//" async></script>
-        </div>        
+       
         <script>
             /**
              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -143,15 +138,16 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 
                     reader.onload = function (e) {
                         $('.image-upload-wrap').hide();
+                        $('#loading').show();
                         $('.file-upload-image').attr('src', e.target.result);
                         $('.file-upload-content').show();
-
                         $('.image-title').html(input.files[0].name);
                     };
 
                     reader.readAsDataURL(input.files[0]);
                     init().then(() => {
                         predict();
+                        $('#loading').hide();
                     });
                 } else {
                     removeUpload();
@@ -230,16 +226,47 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                         break;
                 }
 
-                $('.resultmessage').html(resultMessage);
+                $('.result-message').html(resultMessage);
 
                 for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction =
-                        prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+                        prediction[i].className + ': ' + Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
                     labelContainer.childNodes[i].innerHTML = classPrediction;
                 }
             }
+        function show() {
+            document.querySelector('#desc').style.display = 'block';
+            document.querySelector('#open').style.display = 'none';
+        }
+        function hide() {
+            document.querySelector('#desc').style.display = 'none';
+            document.querySelector('#open').style.display = 'block';
+        }
         </script>
-        <!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+        <div class="flex flex-row justify-center" style="margin-top: 3vh;">
+            <span class="waitingtext1 text-gray-500" style="font-size: 1.5vh; margin-bottom:2vh">
+            <i class="fas fa-exclamation-circle"></i>
+            본 서비스는 의료 목적으로 사용할 수 없습니다.
+            </span>
+        </div>
+        <div class="ad-banner">
+            <ins class="kakao_ad_area" style="display:none;"
+                data-ad-unit    = "DAN-ubguhr7k8yt0"
+                data-ad-width   = "320"
+                data-ad-height  = "100"></ins>
+            <script type="text/javascript" src="//" async></script>
+        </div> 
+        <footer>
+        <div class="border-b" style="margin-bottom: 3vh;"></div>
+            <div class="flex flex-col justify-center items-center">
+                <span class="text-gray-600 text1">© Health AI 2020. All Rights Reserved. </span>
+                <!--쿠팡파트너스 설명문구
+                <span class="text-gray-600 text1" style="font-size: 1.4vh;">“파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음"</span>
+                -->
+            </div>
+        </footer>
+    </body>
+<!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -247,5 +274,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-    </body>
 </html>
