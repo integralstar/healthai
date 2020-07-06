@@ -21,35 +21,9 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Health AI Home</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                            >Disabled</a
-                        >
-                    </li>
-                </ul>
-            </div>
         </nav>
         <section class="section">
             <h1 class="title">인공 지능 안면 인식을 통한 건강 체크</h1>
@@ -58,13 +32,9 @@
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <div class="file-upload">
             <div class="image-upload-wrap">
-                <input
-                    class="file-upload-input"
-                    type="file"
-                    onchange="readURL(this);"
-                    accept="image/*"/>
+                <input class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*"/>
                 <div class="drag-text">
-                    <img src="img/upload.svg" class="mt-5 pt-5 upload">
+                    <img src="img/photo.png" class="mt-5 pt-5 upload">
                     <h3 class="mb-5 pb-5 pt-4  upload-text">버튼을 눌러 얼굴 사진을 선택하거나 파일을 이 곳으로 끌어다 놓으세요.</h3>
                 </div>
             </div>
@@ -76,8 +46,9 @@
                     </div>
                     <p class="text-center">인공 지능이 당신의 얼굴을 분석하고 있습니다.</p>
                 </div>
-                <p class="result-message"></p>
+                <div class="result-message"></div>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+                <br>
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
                         <span class="try-again-text">다른 사진으로 다시하기</span>
@@ -85,7 +56,7 @@
                 </div>
             </div>
             <br>
-            <p class="tip">더 정확한 결과를 얻고 싶다면 <b>조명을 고려하여 화장하지 않은 정면 사진</b> 으로 테스트해보세요!</p>
+            <p class="tip">더 정확한 결과를 얻고 싶다면 <b>조명을 고려하여 화장하지 않은 정면 사진</b> 으로 다시 테스트 해 보세요!</p>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>       
@@ -94,13 +65,14 @@
         <script>
             /**
              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
             /*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+            */
             (function () {
                 // DON'T EDIT BELOW THIS LINE
                 var d = document,
@@ -201,7 +173,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var image = document.getElementById('image');
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-                var resultMessage;
+
+                var resultMessage = "";
+
                 switch (prediction.className) {
                     case '건강한 얼굴':
                         resultMessage = '매일 규칙적인 습관과 운동을 잊지 마세요~!';
@@ -224,13 +198,15 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     case '다크써클':
                         resultMessage = '휴식이 필요합니다!';
                         break;
+                    case 'default':
+                        resultMessage = 'test';
+                        break;
                 }
 
                 $('.result-message').html(resultMessage);
 
                 for (let i = 0; i < maxPredictions; i++) {
-                    const classPrediction =
-                        prediction[i].className + ': ' + Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                    const classPrediction = prediction[i].className + ': ' + Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
                     labelContainer.childNodes[i].innerHTML = classPrediction;
                 }
             }
@@ -246,7 +222,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
         <div class="flex flex-row justify-center" style="margin-top: 3vh;">
             <span class="waitingtext1 text-gray-500" style="font-size: 1.5vh; margin-bottom:2vh">
             <i class="fas fa-exclamation-circle"></i>
-            본 서비스는 의료 목적으로 사용할 수 없습니다.
+            본 서비스는 의료 목적으로 사용하실 수 없습니다.
             </span>
         </div>
         <div class="ad-banner">
