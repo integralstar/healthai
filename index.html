@@ -4,6 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="naver-site-verification" content="9598d0e884181219be3deac3f06c3a65a3d95562" />
 
         <!-- Bootstrap CSS -->
         <link
@@ -23,7 +24,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Health AI Home</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -54,27 +55,24 @@
                 </ul>
             </div>
         </nav>
+        <section class="section">
+            <h1 class="title">인공 지능 안면 인식을 통한 건강 체크</h1>
+            <h2 class="subtitle">건강은 제일의 재산이다 - 에머슨 -</h2>
+        </section>
         <script
             class="jsbin"
             src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
 		</script>
         <div class="file-upload">
-            <button
-                class="file-upload-btn"
-                type="button"
-                onclick="$('.file-upload-input').trigger( 'click' )">
-                Add Image
-            </button>
-
             <div class="image-upload-wrap">
                 <input
                     class="file-upload-input"
                     type="file"
                     onchange="readURL(this);"
-                    accept="image/*"
-                />
+                    accept="image/*"/>
                 <div class="drag-text">
-                    <h3>Drag and drop a file or select add Image</h3>
+                    <img src="img/upload.svg" class="mt-5 pt-5 upload">
+                    <h3 class="mb-5 pb-5 pt-4  upload-text">버튼을 눌러 얼굴 사진을 선택하거나 파일을 이 곳으로 끌어다 놓으세요.</h3>
                 </div>
             </div>
             <div class="file-upload-content">
@@ -89,9 +87,15 @@
             </div>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
-        </div>
-        <div id="webcam-container"></div>
+        </div>       
         <div id="disqus_thread"></div>
+        <div class="ad-banner">
+            <ins class="kakao_ad_area" style="display:none;"
+                data-ad-unit    = "DAN-ubguhr7k8yt0"
+                data-ad-width   = "320"
+                data-ad-height  = "100"></ins>
+                <script type="text/javascript" src="//" async></script>
+        </div>        
         <script>
             /**
              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -139,7 +143,6 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 
                     reader.onload = function (e) {
                         $('.image-upload-wrap').hide();
-
                         $('.file-upload-image').attr('src', e.target.result);
                         $('.file-upload-content').show();
 
@@ -174,9 +177,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
             // the link to your model provided by Teachable Machine export panel
             const URL = 'https://teachablemachine.withgoogle.com/models/j6WGahUlC/';
 
-            let model, webcam, labelContainer, maxPredictions;
+            let model, labelContainer, maxPredictions;
 
-            // Load the image model and setup the webcam
+            // Load the image model
             async function init() {
                 const modelURL = URL + 'model.json';
                 const metadataURL = URL + 'metadata.json';
@@ -186,7 +189,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 // or files from your local hard drive
                 // Note: the pose library adds "tmImage" object to your window (window.tmImage)
                 model = await tmImage.load(modelURL, metadataURL);
-                maxPredictions = 4; //model.getTotalClasses();
+                maxPredictions = 4;
 
                 // append elements to the DOM
                 labelContainer = document.getElementById('label-container');
@@ -196,7 +199,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 }
             }
 
-            // run the webcam image through the image model
+            // run the image through the image model
             async function predict() {
                 // predict can take in an image, video or canvas html element
                 var image = document.getElementById('image');
@@ -217,7 +220,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                         resultMessage = '협심증, 심근경색 위험';
                         break;
                     case '창백한 얼굴':
-                        resultMessage = '기립성저혈압';
+                        resultMessage = '기립성 저혈압';
                         break;
                     case '기미와 주근깨':
                         resultMessage = '당분, 기름 때문에 발생';
@@ -227,7 +230,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                         break;
                 }
 
-                $('.result-message').html(resultMessage);
+                $('.resultmessage').html(resultMessage);
 
                 for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction =
