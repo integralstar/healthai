@@ -56,7 +56,7 @@
                 </div>
             </div>
             <br>
-            <p class="tip">더 정확한 결과를 얻고 싶다면 <b>조명을 고려하여 화장하지 않은 정면 사진</b> 으로 다시 테스트 해 보세요!</p>
+            <p class="tip">더 정확한 결과를 얻고 싶으시면 <b>화장하지 않은 사진</b>을 이용해 보세요!</p>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>       
@@ -207,14 +207,14 @@
                         explain = "과로나 스트레스에 의한 영향으로<b>휴식</b>과 충분한 영향분 섭취가 필요합니다!";
                         break;
                     case 'default':
-                        result = '알 수 없는 결과';
-                        explain = "나중에 다시 시도하세요!";
+                        result = '잘못된 결과';
+                        explain = "에러가 발생했습니다. 나중에 다시 시도하여 주세요!";
                         break;
                 }
                 var title = "<div> class='" + prediction[0].className + "_title'>" + result + "</div>"
                 var explain = "<div class='explain pt-2'>" + explain + "</div>"
 
-                $('.result-message').html(result + explain);
+                $('.result-message').html(title + explain);
 
                 for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction = prediction[i].className + ': ' + Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
@@ -233,7 +233,7 @@
         <div class="flex flex-row justify-center" style="margin-top: 3vh;">
             <span class="waitingtext1 text-gray-500" style="font-size: 1.5vh; margin-bottom:2vh">
             <i class="fas fa-exclamation-circle"></i>
-            본 서비스는 의료 목적으로 사용하실 수 없습니다.
+            본 서비스를 사용하실 때 사진이 서버에 저장 되지 않으며 이 서비스를 의료 목적으로 사용하실 수 없습니다.
             </span>
         </div>
         <div class="ad-banner">
