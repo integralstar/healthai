@@ -143,7 +143,7 @@
             // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
             // the link to your model provided by Teachable Machine export panel
-            const URL = 'https://teachablemachine.withgoogle.com/models/j6WGahUlC/';
+			const URL = 'https://teachablemachine.withgoogle.com/models/CDNm7zYL_/';
 
             let model, labelContainer, maxPredictions;
 
@@ -174,36 +174,46 @@
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
 
-                var resultMessage = "";
+                var resultMessage = "건강한 상태입니다 : )";
 
                 switch (prediction.className) {
-                    case '건강한 얼굴':
-                        resultMessage = '매일 규칙적인 습관과 운동을 잊지 마세요~!';
+                    case 'healthy':
+                        result = '건강한 상태';
+                        explain = "건강 상태를 유지하기 위하여 규칙적인 습관과 운동을 잊지 마세요~!";
                         break;
-                    case '검정 얼굴':
-                        resultMessage = '말초혈액순환 장애';
+                    case 'black':
+                        result= '검은 얼굴';
+                        explain = "주의 해야 할 질병 : 말초혈액순환 장애";
                         break;
-                    case '누런 얼굴':
-                        resultMessage = '빈혈, 간질환 의심';
+                    case 'yellow':
+                        resultMessage = '누런 얼굴';
+                        explain = "주의 해야 할 질병 : 빈혈, 간질환 의심";
                         break;
-                    case '붉은 얼굴':
-                        resultMessage = '협심증, 심근경색 위험';
+                    case 'red':
+                        result = '안면 홍조';
+                        explain = "주의 해야 할 질병 : 협심증, 심근경색 위험";
                         break;
-                    case '창백한 얼굴':
-                        resultMessage = '기립성 저혈압';
+                    case 'pale':
+                        result= '창백한 얼굴';
+                        explain = "주의 해야 할 질병 : 기립성 저혈압";
                         break;
-                    case '기미와 주근깨':
-                        resultMessage = '당분, 기름 때문에 발생';
+                    case 'freckles':
+                        result = '기미와 주근깨';
+                        explain = "당분과 기름이 원인입니다. <b>식습관</b>에 유의하세요!!";
                         break;
-                    case '다크써클':
-                        resultMessage = '휴식이 필요합니다!';
+                    case 'darkcircle':
+                        result = '다크써클';
+                        explain = "과로나 스트레스에 의한 영향으로<b>휴식</b>과 충분한 영향분 섭취가 필요합니다!";
                         break;
                     case 'default':
-                        resultMessage = 'test';
+                        result = '알 수 없는 결과';
+                        explain = "나중에 다시 시도하세요!";
                         break;
                 }
+                var title = "<div> class='" + prediction[0].className + "_title'>" + result + "</div>"
+                var explain = "<div class='explain pt-2'>" + explain + "</div>"
 
-                $('.result-message').html(resultMessage);
+                $('.result-message').html(result + explain);
 
                 for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction = prediction[i].className + ': ' + Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
@@ -242,12 +252,8 @@
             </div>
         </footer>
     </body>
+</html>
 <!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-</html>
