@@ -151,6 +151,63 @@ body {
   color: #35465d;
 }
 
+.healthy_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: green;
+}
+
+.black_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: black;
+}
+
+.yellow_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: yellow;
+}
+
+.red_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: red;
+}
+
+.pale_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: white;
+}
+
+.freckles_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: brown;
+}
+
+.darkcircle_title {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: black;
+}
+
+.explain {
+  font-family: NanumSquareR;
+  line-height: 1.53;
+  text-align: center;
+  color: purple;
+}
+
+
 .ad-banner {
   width: 320px;
   margin: 0 auto;

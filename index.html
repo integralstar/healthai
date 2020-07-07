@@ -44,14 +44,14 @@
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                    <p class="text-center">인공 지능이 당신의 얼굴을 분석하고 있습니다.</p>
+                    <p class="text-center">인공지능이 사진을 분석하고 있습니다...</p>
                 </div>
                 <div class="result-message"></div>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
                 <br>
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
-                        <span class="try-again-text">다른 사진으로 다시하기</span>
+                        <span class="try-again-text">다른 사진으로 재시도</span>
                     </button>
                 </div>
             </div>
@@ -177,7 +177,7 @@
                 var result = ": )";
 				var explain = "^-^";
 
-                switch (prediction.className) {
+                switch (prediction[0].className) {
                     case 'healthy':
                         result = '건강한 상태';
                         explain = "건강 상태를 유지하기 위하여 규칙적인 습관과 운동을 잊지 마세요~!";
@@ -211,7 +211,7 @@
                         explain = "에러가 발생했습니다. 나중에 다시 시도하여 주세요!";
                         break;
                 }
-                var title = "<div> class='" + prediction[0].className + "_title'>" + result + "</div>"
+                var title = "<div class='" + prediction[0].className + "_title'>" + result + "</div>"
                 var explain = "<div class='explain pt-2'>" + explain + "</div>"
 
                 $('.result-message').html(title + explain);
