@@ -19,12 +19,41 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Health AI Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">Health AI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
-        </nav>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="mobile.html">Mobile App</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    다른 서비스들
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">유용한 건강정보</a>
+                    <a class="dropdown-item" href="#">식습관체크</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">스트레스 줄이기</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">스트레칭 따라하기</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
         <section class="section">
             <h1 class="title">인공 지능 안면 인식을 통한 건강 체크</h1>
             <h2 class="subtitle">건강은 제일의 재산이다 - 에머슨 -</h2>
@@ -44,7 +73,7 @@
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                    <p class="text-center">인공지능이 사진을 분석하고 있습니다...</p>
+                    <p class="text-center">AI가 사진을 분석하고 있습니다...</p>
                 </div>
                 <div class="result-message"></div>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
@@ -182,11 +211,12 @@
                 var image = document.getElementById('image');
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                var x0x = prediction[0].className;
 
                 var result = ": )";
 				var explain = "^-^";
 
-                switch (prediction[0].className) {
+                switch (x0x) {
                     case 'healthy':
                         result = '건강한 상태';
                         explain = "건강 상태를 유지하기 위하여 규칙적인 습관과 운동을 잊지 마세요~!";
@@ -225,18 +255,57 @@
 
                 $('.result-message').html(title + explain);
 
+                var barWidth;
                 for (let i = 0; i < maxPredictions; i++) {
-                    const classPrediction = prediction[i].className + ': ' + Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-                    labelContainer.childNodes[i].innerHTML = classPrediction;
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = "4%"
+                    } else {
+                        barWidth = "2%"
+                    }
+
+                    var labelTitle;
+
+                    switch (prediction[i].className) {
+                        case "healthy":
+                            labelTitle = "건강함"
+                            break;
+                        case "black":
+                            labelTitle = "깜장 빛깔"
+                            break;
+                        case "yellow":
+                            labelTitle = "누런끼"
+                            break;
+                        case "red":
+                            labelTitle = "홍조"
+                            break;
+                        case "pale":
+                            labelTitle = "창백함"
+                            break;
+                        case "freckles":
+                            labelTitle = "기미와 주근깨"
+                            break;
+                        case "darkcircle":
+                            labelTitle = "다크서클"
+                            break;
+                        default:
+                            labelTitle = "알수없음"
                 }
+
+                var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
             }
-        function show() {
-            document.querySelector('#desc').style.display = 'block';
-            document.querySelector('#open').style.display = 'none';
-        }
-        function hide() {
-            document.querySelector('#desc').style.display = 'none';
-            document.querySelector('#open').style.display = 'block';
+    
+            function show() {
+                document.querySelector('#desc').style.display = 'block';
+                document.querySelector('#open').style.display = 'none';
+            }
+            function hide() {
+                document.querySelector('#desc').style.display = 'none';
+                document.querySelector('#open').style.display = 'block';
+            }
         }
         </script>
         <div class="flex flex-row justify-center" style="margin-top: 3vh;">
@@ -248,10 +317,7 @@
         <footer>
         <div class="border-b" style="margin-bottom: 3vh;"></div>
             <div class="flex flex-col justify-center items-center">
-                <span class="text-gray-600 text1">© Health AI 2020. All Rights Reserved. </span>
-                <!--쿠팡파트너스 설명문구
-                <span class="text-gray-600 text1" style="font-size: 1.4vh;">“파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음"</span>
-                -->
+                <span class="text-gray-600 last-text">© Health AI 2020. All Rights Reserved. </span>
             </div>
         </footer>
     </body>
