@@ -87,7 +87,8 @@
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>
-
+        <br>
+        <i class="fas fa-exclamation-circle">본 서비스를 이용 시 사진이 저장되지 않으며 의료 용도로 사용하실 수 없습니다.</i>
 		<br>
 		<div class="kakao-banner">
             <ins class="kakao_ad_area" style="display:none;"
@@ -102,7 +103,6 @@
             <script>new PartnersCoupang.G({ id:270081 });</script>
         </div>
         <br>
-
         <div id="disqus_thread"></div>
         <script>
             /* disqus */
@@ -205,53 +205,63 @@
                 var image = document.getElementById('image');
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-                var x0x = prediction[0].className;
 
-                var result;
-				var explain;
+                var result, explain, advice;
 
-                switch (x0x) {
+                switch (prediction[0].className) {
                     case 'healthy':
                         result = '건강한 상태';
                         explain = "건강 상태를 유지하기 위하여 규칙적인 습관과 운동을 잊지 마세요~!";
+                        advice = "건강은 건강 할 때 지켜야 합니다. 주기적인 건강검진을 잊지 마세요.";
                         break;
                     case 'black':
-                        result= '깜장 빛깔';
-                        explain = "주의 해야 할 질병 : 말초혈액순환 장애";
+                        result= '검정빛';
+                        explain = "주의해야 할 질병 : 말초혈액순환 장애, 신장질환";
+                        advice = "신장 질환을 예방하기 위해 검은콩, 옥수수수염차, 산약차, 산수유, 복분자가 도움이 되며 옥수수수염, 당귀, 음양곽은 얼굴이 붓는 것을 막아줍니다. <br> 햇빛에 그을렸을 수도 있으니 장시간 외출 시에 자외선 차단 크림을 사용해 보세요. ";
                         break;
                     case 'yellow':
                         result = '누런끼';
-                        explain = "주의 해야 할 질병 : 빈혈, 간질환 의심";
+                        explain = "간이나 담낭(쓸개)에 문제가 생기면 혈액 내 빌리루빈의 수치가 증가하며 안색을 노랗게(황달) 만듭니다. 또한 위나 십이지장 등의 소화기관에 관계가 있습니다.<br>주의해야 할 질병들 : 빈혈, 간질환, 간암, 담석, 담낭염, 담낭암, 췌장염, 췌장암";
+                        advice = "음주나 수면 부족이 간 기능과 연관이 있습니다. 황달은 담즙 색소가 원활하게 배출되지 않아 혈액으로 흡수되며 생깁니다. 손, 발, 눈 흰자위가 노랗게 변하게 되다면 병원에서 관련 검사를 통한 전문의의 진료가 필요합니다.<br> 위장 건강을 위해 규칙적인 식사를 하시고 황기차, 인삼차, 백출차, 산사차를 자주 마시는 것이 도움이 됩니다.";
                         break;
                     case 'red':
-                        result = '안면 홍조';
-                        explain = "주의 해야 할 질병 : 협심증, 심근경색 위험";
+                        result = '안면홍조';
+                        explain = "혈액 순환이 원활하지 않을 경우 체내 세포와 조직에 피와 산소가 충분히 공급되지 않아서 혈관이 확장되고 이로 인하여 얼굴이 불그스름 해 질 수 있습니다. <br>주의해야 할 질병들:협심증, 심근경색";
+                        advice = "열이 많은 체질 일 수도 있습니다. 체증 증가에 신경쓰시고 스트레칭을 통한 어깨결림, 두통 등과 같은 증상을 예방하며 혈액 순환을 개선할 수 있습니다.";
                         break;
                     case 'pale':
                         result= '창백함';
-                        explain = "주의 해야 할 질병 : 기립성 저혈압";
+                        explain = "얼굴에 핏기가 없을 때 창백해 질 수 있습니다. 빈혈, 폐렴, 만성 기관지염, 폐암과 같은 호흡기 기능이 좋지 않을 때 나타날 수 있습니다.";
+                        advice = "삼림욕을 통해 맑은 공기를 자주 마시는 것을 추천해 드립니다. 폐를 튼튼하게 하기 위한 오미자, 도라지, 살구씨 섭취를 통해 몸을 따뜻하게 해 주시면 도움이 됩니다. <br> 참고로 내장 출혈이 있는 경우에도 빈혈로 안면이 창백해 질 수 있으며 대변은 검은색이 됩니다.";
                         break;
                     case 'freckles':
                         result = '기미와 주근깨';
-                        explain = "당분과 기름이 원인입니다. <b>식습관</b>에 유의하세요!!";
+                        explain = "노폐물을 해독하는 간 기능이나 자외선으로 인한 활성 산소를 제거하는 능력이 저하 되는 것과 관련이 있습니다.";
+                        advice = "외출 시 햇빛에 노출 되는 시간을 고려하여 자외선 차단 크림을 사용하세요.";
                         break;
                     case 'darkcircle':
                         result = '다크써클';
-                        explain = "과로나 스트레스에 의한 영향으로<b>휴식</b>과 충분한 영향분 섭취가 필요합니다!";
+                        explain = "과로나 스트레스에 의한 영향으로<b>휴식</b>과 충분한 영향분 섭취가 필요합니다! 혹은 혈액순환과 관련이 있을 수 있습니다. <br> 주의해야 할 질병 : 신장병";
+                        advice = "눈가에 온찜질, 메이크업 꼼꼼히 지우기, 화장 또는 세안 시 눈가에 자극 주지 않기 등을 통하여 개선 할 수 있습니다.";
                         break;
                     case 'default':
-                        result = '잘못된 결과';
+                        result = '잘못된결과';
                         explain = "에러가 발생했습니다. 나중에 다시 시도하여 주세요!";
+                        advice = "나중에 다시 시도하세요!";
                         break;
                 }
                 var title = "<div class='" + prediction[0].className + "_title'>" + result + "</div>"
                 var explain = "<div class='explain pt-2'>" + explain + "</div>"
+                var advice = "<div class='advice'>" + advice + "</div>"
 
-                $('.result-message').html(title + explain);
+                $('.result-message').html(title + explain + advice);
 
                 var barWidth;
                 for (let i = 0; i < maxPredictions; i++) {
-                    if (prediction[i].probability.toFixed(2) > 0) {
+                    if (prediction[i].probability.toFixed(2) == 0) {
+                        continue;
+                        
+                    } else {
                         barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
                     }
 
@@ -289,11 +299,6 @@
             }
         }
         </script>
-        <div class="flex flex-row justify-center" style="margin-top: 3vh;">
-            <span class="waitingtext1 text-gray-500" style="font-size: 1.5vh; margin-bottom:2vh">
-            <i class="fas fa-exclamation-circle">본 서비스를 사용하실 때 사진이 저장 되지 않으며 의료 목적으로 사용하실 수 없습니다.</i>
-            </span>
-        </div>
         <footer>
         <div class="border-b" style="margin-bottom: 3vh;">
             <div class="flex flex-col justify-center items-center">
