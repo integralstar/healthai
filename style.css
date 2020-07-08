@@ -112,58 +112,64 @@ padding: 20px;
 
 .healthy_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: green;
 }
 
 .black_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: black;
 }
 
 .yellow_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: yellow;
 }
 
 .red_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: red;
 }
 
 .pale_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: blue;
 }
 
 .freckles_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: brown;
 }
 
 .darkcircle_title {
   font-family: NanumSquareR;
-  line-height: 1.53;
+  line-height: 1.5;
   text-align: center;
   color: black;
 }
 
 .explain {
   font-family: NanumSquareR;
-  line-height: 1.25;
+  line-height: 1.0;
   text-align: center;
   color: rgb(216, 18, 166);
+}
+
+.advice {
+  font-family: NanumSquareR;
+  line-height: 1.0;
+  color: rgb(81, 158, 221);
 }
 
 .bar-container {
@@ -279,7 +285,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(235, 166, 190, 0.2);
+  background-color: rgba(20, 19, 20, 0.2);
 }
 .darkcircle-bar {
   position: absolute;
@@ -317,10 +323,15 @@ label {
 }
 
 
-.ad-banner {
+.kakao-banner {
   width: 320px;
   margin: 0 auto;
 }
+
+.coupang-banner {
+  margin: 0 auto;
+}
+
 
 .addthis_inline_share_toolbox {
   margin: 0 auto;
