@@ -30,22 +30,18 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="mobile.html">Mobile App</a>
-                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    다른 서비스들
+                    Mobile
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">유용한 건강정보</a>
-                    <a class="dropdown-item" href="#">식습관체크</a>
+                    <a class="dropdown-item" href="#">Android</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">스트레스 줄이기</a>
+                    <a class="dropdown-item" href="#">iOS</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">스트레칭 따라하기</a>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">유용한 건강정보</a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -56,7 +52,7 @@
           </nav>
         <section class="section">
             <h1 class="title">인공 지능 안면 인식을 통한 건강 체크</h1>
-            <h2 class="subtitle">건강은 제일의 재산이다 - 에머슨 -</h2>
+            <h3 class="subtitle">건강은 제일의 재산이다 - 에머슨 -</h3>
         </section>
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <div class="file-upload">
@@ -73,14 +69,14 @@
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                    <p class="text-center">AI가 사진을 분석하고 있습니다...</p>
+                    <p class="text-center">AI가 사진을 분석하고 있습니다.</p>
                 </div>
                 <div class="result-message"></div>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
                 <br>
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
-                        <span class="try-again-text">다른 사진으로 재시도</span>
+                        <img  src="img/refresh.png">
                     </button>
                 </div>
             </div>
@@ -222,11 +218,11 @@
                         explain = "건강 상태를 유지하기 위하여 규칙적인 습관과 운동을 잊지 마세요~!";
                         break;
                     case 'black':
-                        result= '검은 얼굴';
+                        result= '깜장 빛깔';
                         explain = "주의 해야 할 질병 : 말초혈액순환 장애";
                         break;
                     case 'yellow':
-                        result = '누런 얼굴';
+                        result = '누런끼';
                         explain = "주의 해야 할 질병 : 빈혈, 간질환 의심";
                         break;
                     case 'red':
@@ -234,7 +230,7 @@
                         explain = "주의 해야 할 질병 : 협심증, 심근경색 위험";
                         break;
                     case 'pale':
-                        result= '창백한 얼굴';
+                        result= '창백함';
                         explain = "주의 해야 할 질병 : 기립성 저혈압";
                         break;
                     case 'freckles':
@@ -259,17 +255,13 @@
                 for (let i = 0; i < maxPredictions; i++) {
                     if (prediction[i].probability.toFixed(2) > 0.1) {
                         barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
-                        barWidth = "4%"
-                    } else {
-                        barWidth = "2%"
                     }
 
                     var labelTitle;
 
                     switch (prediction[i].className) {
                         case "healthy":
-                            labelTitle = "건강함"
+                            labelTitle = "건강"
                             break;
                         case "black":
                             labelTitle = "깜장 빛깔"
@@ -310,15 +302,15 @@
         </script>
         <div class="flex flex-row justify-center" style="margin-top: 3vh;">
             <span class="waitingtext1 text-gray-500" style="font-size: 1.5vh; margin-bottom:2vh">
-            <i class="fas fa-exclamation-circle"></i>
-            본 서비스를 사용하실 때 사진이 서버에 저장 되지 않으며 이 서비스를 의료 목적으로 사용하실 수 없습니다.
+            <i class="fas fa-exclamation-circle">본 서비스를 사용하실 때 사진이 저장 되지 않으며 의료 목적으로 사용하실 수 없습니다.</i>
             </span>
         </div>
         <footer>
-        <div class="border-b" style="margin-bottom: 3vh;"></div>
+        <div class="border-b" style="margin-bottom: 3vh;">
             <div class="flex flex-col justify-center items-center">
-                <span class="text-gray-600 last-text">© Health AI 2020. All Rights Reserved. </span>
+                <span class="text-gray-600 last-text">© Health AI 2020. All Rights Reserved.</span>
             </div>
+        </div>
         </footer>
     </body>
 </html>
