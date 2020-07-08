@@ -163,7 +163,7 @@ padding: 20px;
   font-family: NanumSquareR;
   line-height: 1.25;
   text-align: center;
-  color: purple;
+  color: rgb(216, 18, 166);
 }
 
 .bar-container {
@@ -194,7 +194,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(117, 204, 84, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .black-bar {
   position: absolute;
@@ -211,7 +211,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(251, 255, 32, 0.2);
+  background-color: rgba(226, 230, 45, 0.836);
 }
 .yellow-bar {
   position: absolute;
@@ -228,7 +228,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(238, 81, 146, 0.384);
+  background-color: rgba(243, 19, 19, 0.514);
 }
 .red-bar {
   position: absolute;
@@ -236,7 +236,7 @@ padding: 20px;
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgb(241, 98, 182);
+  background-color: rgb(236, 91, 91);
 }
 .pale-box {
   position: absolute;
@@ -245,7 +245,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(165, 231, 231, 0.2);
+  background-color: rgba(8, 247, 247, 0.418);
 }
 .pale-bar {
   position: absolute;
@@ -287,7 +287,7 @@ padding: 20px;
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(235, 166, 190, 1);
+  background-color: rgb(0, 0, 0);
 }
 .percent-text {
   font-size: 1rem;
