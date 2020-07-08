@@ -323,13 +323,15 @@ label {
 }
 
 
-.kakao-banner {
+#kakao-banner {
   width: 320px;
   margin: 0 auto;
 }
 
-.coupang-banner {
+#coupang-banner {
   margin: 0 auto;
+  position: relative;
+  left:50%
 }
 
 

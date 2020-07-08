@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="style.css" />
+        <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" > -->
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
         <meta name="description" content="인공지능을 이용한 건강 습관 만들기">
@@ -11,8 +13,7 @@
         <meta property="og:url" content="https://faceshapeai.netlify.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="인공지능을 이용한 건강 체크" />
-        <meta property="og:description"
-            content="인공지능이 얼굴 사진을 분석하고 그 질병의 원인이 될 수 있는 것들에 대한 정보와 개선 방법을 제공합니다." />
+        <meta property="og:description" content="인공지능이 얼굴 사진을 분석하고 그 질병의 원인이 될 수 있는 것들에 대한 정보와 개선 방법을 제공합니다." />
         <title>Health AI</title>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02d0a9274c4624"></script>
         <!--JQuery latist-->
@@ -68,10 +69,11 @@
             <div class="file-upload-content">
                 <img class="file-upload-image" id="image" src="#" alt="your face image" />
                 <div id="loading" class="animated bounce">
-                    <div class="spinner-border" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                    <p class="text-center">AI가 사진을 분석하고 있습니다.</p>
+                    <spin>
+                        <p class="text-center">AI가 사진을 분석하고 있습니다.</p>
+                        <p class="items-center"><img src="img/emoji_25.gif" /></p>
+                    </spin>
+                    
                 </div>
                 <div class="result-message"></div>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
@@ -90,7 +92,7 @@
         <br>
         <i class="fas fa-exclamation-circle">본 서비스 이용 시 사진이 저장되지 않으며 의료 용도로 사용하실 수 없습니다.</i>
 		<br>
-		<div class="kakao-banner">
+		<div id="kakao-banner">
             <ins class="kakao_ad_area" style="display:none;"
                 data-ad-unit    = "DAN-ubguhr7k8yt0"
                 data-ad-width   = "320"
@@ -98,7 +100,7 @@
             <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
         <br>
-        <div class="coupang-banner">
+        <div id="flex flex-row justify-center">
             <script src="https://ads-partners.coupang.com/g.js"></script>
             <script>new PartnersCoupang.G({ id:270081 });</script>
         </div>
@@ -308,6 +310,9 @@
         </footer>
     </body>
 </html>
+<!--
+파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
+-->
 <!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
