@@ -7,7 +7,6 @@ body {
 }
 
 .navbar-light .navbar-brand {
-  font-family: NanumSquareR;
   line-height: 1.68;
   text-align: left;
   color: #35465d; 
@@ -22,14 +21,12 @@ body {
 }
 
 .title {
-  font-family: NanumSquareR;
   line-height: 1.67;
   text-align: center;
   color: #35465d;
 }
 
 .subtitle {
-  font-family: NanumSquareR;
   line-height: 1.53;
   text-align: center;
   color: #35465d;
@@ -50,11 +47,11 @@ body {
 }
 
 .file-upload {
-  padding: 15% 3%;
+  padding: 5% 12%;
   margin: 0 auto;
   border-radius: 10px;
   border: solid 1.5px #f6f7fa;
-  background-color: #f6f7fa;
+  background-color: #edfffc;
 }
 
 .file-upload-content {
@@ -111,63 +108,47 @@ padding: 20px;
 }
 
 .healthy_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: green;
 }
 
 .black_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: black;
 }
 
 .yellow_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: yellow;
 }
 
 .red_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: red;
 }
 
 .pale_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: blue;
 }
 
 .freckles_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: brown;
 }
 
 .darkcircle_title {
-  font-family: NanumSquareR;
-  line-height: 1.5;
   text-align: center;
   color: black;
 }
 
 .explain {
-  font-family: NanumSquareR;
   line-height: 1.0;
   text-align: center;
   color: rgb(216, 18, 166);
 }
 
 .advice {
-  font-family: NanumSquareR;
   line-height: 1.0;
   color: rgb(81, 158, 221);
 }
@@ -208,7 +189,7 @@ padding: 20px;
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgb(78, 82, 76);
+  background-color: rgb(0, 0, 0);
 }
 .yellow-box {
   position: absolute;
@@ -217,7 +198,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(226, 230, 45, 0.836);
+  background-color: rgba(236, 240, 10, 0.2);
 }
 .yellow-bar {
   position: absolute;
@@ -234,7 +215,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(243, 19, 19, 0.514);
+  background-color: rgba(236, 91, 91, 0.2);
 }
 .red-bar {
   position: absolute;
@@ -251,7 +232,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(8, 247, 247, 0.418);
+  background-color: rgba(81, 158, 221, 0.2);
 }
 .pale-bar {
   position: absolute;
@@ -268,7 +249,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(214, 100, 34, 0.2);
+  background-color: rgba(163, 99, 25, 0.2);
 }
 .freckles-bar {
   position: absolute;
@@ -285,7 +266,7 @@ padding: 20px;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(20, 19, 20, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .darkcircle-bar {
   position: absolute;
@@ -305,7 +286,7 @@ padding: 20px;
     height: 2rem;
 }
 #label-container {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 .result-message {
