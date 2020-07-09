@@ -303,18 +303,18 @@ label {
   position: relative;
 }
 
-
 #kakao-banner {
   width: 320px;
   margin: 0 auto;
 }
 
 #coupang-banner {
+  width: 680px;
+  height: 140;
   margin: 0 auto;
   position: relative;
-  left:50%
+  left: 50%;
 }
-
 
 .addthis_inline_share_toolbox {
   margin: 0 auto;
