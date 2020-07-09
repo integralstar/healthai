@@ -7,14 +7,14 @@
         <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" > -->
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
-        <meta name="description" content="controllo sanitario con intelligenza artificiale">
+        <meta name="description" content="Contrôle de la santé à l'aide de l'intelligence artificielle">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="naver-site-verification" content="9598d0e884181219be3deac3f06c3a65a3d95562" />
-        <meta property="og:title" content="Controllo sanitario con riconoscimento facciale dell'intelligenza artificiale." />
+        <meta property="og:title" content="Vérifier la santé en utilisant la reconnaissance faciale intelligente artificielle" />
         <meta property="og:url" content="https://biohealth.netlify.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://biohealth.netlify.app/img/photo.png">
-        <meta property="og:description" content="Analizza le immagini del viso e fornisce informazioni e metodi per migliorare le cose che possono causare la malattia attraverso l'intelligenza artificiale." />
+        <meta property="og:description" content="L'intelligence artificielle analyse les photos du visage grâce à la reconnaissance faciale et fournit des informations et des moyens d'améliorer ce qui peut causer la maladie." />
         <title>Health AI</title>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02d0a9274c4624"></script>
         <!--JQuery latist-->
@@ -53,25 +53,25 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="english.html">English</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="japan.html">日本語</a>
+                        <a class="dropdown-item" href="japanese.html">日本語</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="chaina.html">中国</a>
+                        <a class="dropdown-item" href="chinese.html">中国</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="france.html">France</a>
+                        <a class="dropdown-item" href="franch.html">France</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="german.html">Deutschland</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="rusia.html">Россия</a>
+                        <a class="dropdown-item" href="russian.html">Россия</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="italia.html">italiano</a>
+                        <a class="dropdown-item" href="italian.html">italiano</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="vetnam.html">ViệtNam</a>
+                        <a class="dropdown-item" href="vietnamese.html">ViệtNam</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="tailand.html">ประเทศไทย</a>
+                        <a class="dropdown-item" href="thai.html">ประเทศไทย</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">informazioni sanitarie utili</a>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">des informations utiles sur la santé,</a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -81,8 +81,8 @@
             </div>
         </nav>
         <section class="section">
-            <h1 class="title">controllo della salute attraverso il riconoscimento facciale</h1>
-            <h3 class="subtitle">La salute è una proprietà esclusiva - Emerson -</h3>
+            <h1 class="title">Contrôle de la santé par reconnaissance faciale</h1>
+            <h3 class="subtitle">La santé est la propriété la plus importante. - Emerson -</h3>
         </section>
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -91,14 +91,14 @@
                 <input class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*"/>
                 <div class="drag-text">
                     <img src="img/photo.png" class="mt-5 pt-5 upload">
-                    <h3 class="mb-5 pb-5 pt-4  upload-text">fotografia del viso</h3>
+                    <h3 class="mb-5 pb-5 pt-4  upload-text">Photographie de visage</h3>
                 </div>
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="image" src="#" alt="your face image" />
                 <div id="loading" class="animated bounce">
                     <span>
-                        <p class="text-center">AI sta analizzando le foto del viso.</p>
+                        <p class="text-center">AI est en train d'analyser les photos du visage.</p>
                         <p class="items-center"><img src="img/emoji_25.gif" /></p>
                     </span>
                 </div>
@@ -108,18 +108,18 @@
                 <br>
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
-                        di nuovo
+                        Recommencer
                     </button>
                 </div>
             </div>
             <br>
-            <p class="tip">Utilizzando le immagini non cremose si ottengono risultati più precisi.</p>
+            <p class="tip">Vous pouvez obtenir des résultats plus précis en utilisant des photos non maquillées.</p>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>
         <br>
         <div id="exclamation">
-            <i>Durante l'utilizzo di questo servizio, le foto non vengono memorizzate e non possono essere utilizzate per scopi medici.</i>
+            <i>Les photos ne sont pas stockées lors de l'utilisation de ce service et ne peuvent pas être utilisées à des fins médicales.</i>
         </div>
         <br>
         <div id="disqus_thread"></div>
@@ -229,44 +229,44 @@
 
                 switch (prediction[0].className) {
                     case 'healthy':
-                        result = 'stato di salute';
-                        explain = "<br>Non dimenticare abitudini regolari ed esercizio fisico per rimanere in forma.~!";
-                        advice = "<br>La salute deve essere rispettata quando si è in salute. Non dimenticare il controllo periodico.";
+                        result = 'Santé.';
+                        explain = "<br>N'oubliez pas les habitudes régulières et les exercices pour rester en bonne santé.~!";
+                        advice = "<br>La santé doit être préservée quand elle est en bonne santé. N'oubliez pas de faire un examen médical périodique.";
                         break;
                     case 'black':
-                        result= 'nero';
-                        explain = "<br>Malattie da prestare attenzione: Disturbi della circolazione periferica, malattie renali.";
-                        advice = "<br>Per prevenire malattie renali, fagioli neri, tè al mais, thè di montagna, olio di montagna, e gli oppiacei aiutano e impediscono la formazione di gonfiori, zuccheri e carie. <br> Potreste essere abbronzati al sole, quindi provate a usare la crema solare quando uscite per un lungo periodo di tempo.";
+                        result= 'Couleur noire';
+                        explain = "<br>Maladies à surveiller : trouble de la circulation des hyperfréquences, maladie des reins";
+                        advice = "<br>Pour prévenir les maladies rénales, les haricots noirs, le thé à la barbe de maïs, le thé à base de plantes médicinales, l'huile d'arachide et les molécules abdominales sont utiles et empêchent le gonflement du visage. <br>Essayez une crème anti-UV pendant une longue période de temps, car elle peut être brûlée par le soleil.";
                         break;
                     case 'yellow':
-                        result = 'muschio';
-                        explain = "<br>Se si riscontrano problemi al fegato o alla cistifellea (ingiallimento), il livello di bilirubina nel sangue aumenta e rende il viso giallo (ingiallito). Ha anche a che fare con l'apparato digerente dello stomaco e del duodeno.<br>Malattie da curare: anemia, malattie epatiche, cancro al fegato, carcinoma epatico, calcoli biliari, meningite, tumore alla cistifellea, pancreatite, cancro al pancreas.";
-                        advice = "<br>L'intolleranza o la mancanza di sonno sono legate alla funzione. L'ittero non emette pigmenti biliari senza soluzione di continuità, quindi viene assorbito nel sangue e si sviluppa. Se le mani, i piedi e gli occhi bianchi diventano gialli, l'ospedale necessita di cure mediche specialistiche.E 'utile mangiare regolarmente per la salute gastrointestinale e bere spesso tè giallo, ginseng, tè bianco e tè di biancospino.";
+                        result = 'Lièvre jaune';
+                        explain = "<br>S'il y a un problème avec le foie ou le nerf digestif, le taux de bilirubine dans le sang augmente et la couleur jaune (couleur jaune). et les organes digestifs tels que l'estomac ou le dixième.<br>Maladies à surveiller : anémie, maladie du foie, cancer du foie, stérilisation, vasectomie, vasectomie, pancréas, cancer du pancréas.";
+                        advice = "<br>L'alcool ou le manque de sommeil sont liés aux fonctions du foie. La jaunisse n'est pas libérée en douceur, donc elle est absorbée par le sang. <br>Si votre main, vos pieds et vos yeux deviennent jaunes, vous aurez besoin d'un spécialiste de l'hôpital. Il est utile de manger régulièrement pour la santé digestive et de boire souvent du thé au ginseng, du thé au ginseng blanc et du thé au ginseng.";
                         break;
                     case 'red':
-                        result = 'rosa facciale';
-                        explain = "<br>Una cattiva circolazione del sangue non fornisce abbastanza sangue e ossigeno alle cellule e ai tessuti del corpo, quindi i vasi sanguigni si dilatano e possono causare un bruciore del viso. <br>Malattie da curare: angina, infarto del miocardio.";
-                        advice = "<br>Potrebbe essere una struttura con un sacco di calore. Previene e previene sintomi come caduta delle spalle, mal di testa, ecc. e può migliorare la circolazione del sangue.";
+                        result = 'Hippocampe du visage';
+                        explain = "<br>Si la circulation sanguine n'est pas fluide, le sang et l'oxygène ne sont pas assez fournis aux cellules et aux tissus de l'organisme, ce qui peut étendre les vaisseaux sanguins et rendre le visage sombre. <br>Maladies à surveiller : hypersensibilité, cardio-vasculaire.";
+                        advice = "<br>Cela peut être un corps à haute fièvre. Vous pouvez vous soucier de l'augmentation de la maladie corporelle, prévenir les symptômes tels que la chute de l'épaule, les maux de tête, et améliorer la circulation sanguine.";
                         break;
                     case 'pale':
-                        result= 'pallido';
-                        explain = "<br>Quando non hai sangue in faccia, puoi schiarirti. Può verificarsi quando le funzioni respiratorie sono scarse, come anemia, polmonite, bronchite cronica, cancro ai polmoni.";
-                        advice = "<br>Si consiglia di bere spesso aria pulita attraverso il bosco. Per rafforzare i polmoni, riscaldarsi con l'assunzione di semi di Omiza, Dorazi e Albicocche aiuta. Anche in presenza di sanguinamento interno con <br> nota, il viso può diventare pallido con anemia e le feci diventano nere.";
+                        result= 'Paleté';
+                        explain = "<br>Vous pouvez devenir pâle quand votre visage n'a pas de sang. Cela peut se produire lorsque les fonctions respiratoires telles que l'anémie, la pneumonie, l'obstétrite chronique et le cancer du poumon ne sont pas bonnes.";
+                        advice = "<br>Nous vous recommandons de boire de l'air pur souvent à travers un bain de forêt. Cela vous aide à vous réchauffer grâce à la consommation d'omija, de glandes et de graisse de chair pour renforcer les poumons.<br>De plus, même s'il y a une hémorragie interne, l'anémie peut rendre l'œil pâle et la moelle épinière noire.";
                         break;
                     case 'freckles':
-                        result = 'lentiggini';
-                        explain = "<br>La funzione epatica di disintossicazione dei rifiuti anziani o la capacità di eliminare l'ossigeno attivo causata dai raggi ultravioletti sono associate ad una diminuzione.<br>";
-                        advice = "<br>Utilizzare creme solari per la protezione solare in considerazione del tempo di esposizione al sole quando si è fuori..<br>";
+                        result = 'Kimi et ses épaules.';
+                        explain = "<br>C'est lié à la dégradation de la capacité du foie à décoder les déchets ou à l'élimination de l'oxygène actif dû aux rayons ultraviolets.<br>";
+                        advice = "<br>Utilisez de la crème anti-UV en tenant compte du temps d'exposition au soleil pendant votre sortie.<br>";
                         break;
                     case 'darkcircle':
-                        result = 'facoltà oscura';
-                        explain = "<br>Riposo e sufficiente assunzione di sostanze di effetto sono necessari per l'eccesso o per lo stress! O forse ha a che fare con la circolazione. <br> malattia da curare: malattia renale<br>";
-                        advice = "<br>Può essere migliorato attraverso la pulizia meticolosa del vapore sulla neve, make-up, trucco o non irritare la neve in caso di lavaggio.<br>";
+                        result = 'Dark Circle';
+                        explain = "<br>Il faut se reposer et prendre suffisamment d'effets à cause de l'effet de surcharge ou de stress ! ou la circulation sanguine. <br> Maladie à surveiller : maladie rénale<br>";
+                        advice = "<br>On peut l'améliorer en nettoyant les yeux, en éliminant le maquillage minutieusement et en ne stimulant pas les yeux lors de la maquillage ou du lavage.<br>";
                         break;
                     case 'default':
-                        result = 'risultati sbagliati';
-                        explain = "Si è verificato un errore. ";
-                        advice = "Per favore riprova più tardi!";
+                        result = 'Incorrect result';
+                        explain = "Il y a eu une erreur. Essayez-le plus tard!";
+                        advice = "Essayez-le plus tard!";
                         break;
                 }
                 var title = "<div class='" + prediction[0].className + "_title'>" + result + "</div>"
@@ -288,28 +288,28 @@
 
                     switch (prediction[i].className) {
                         case "healthy":
-                            labelTitle = "salute"
+                            labelTitle = "Santé"
                             break;
                         case "black":
-                            labelTitle = "colore nero"
+                            labelTitle = "Couleur noire"
                             break;
                         case "yellow":
-                            labelTitle = "muschio"
+                            labelTitle = "Lièvre jaune"
                             break;
                         case "red":
-                            labelTitle = "alghe rosse"
+                            labelTitle = "Face rouge"
                             break;
                         case "pale":
-                            labelTitle = "pallido"
+                            labelTitle = "Paleté"
                             break;
                         case "freckles":
-                            labelTitle = "lentiggini"
+                            labelTitle = "Pépinière"
                             break;
                         case "darkcircle":
-                            labelTitle = "libri scuri"
+                            labelTitle = "Dark Circle"
                             break;
                         default:
-                            labelTitle = "sconosciuto"
+                            labelTitle = "Inconnu"
                 }
 
                 var label = "<div class='healthy-label d-flex align-items-center'>" + labelTitle + "</div>"

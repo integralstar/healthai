@@ -7,14 +7,14 @@
         <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" > -->
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
-        <meta name="description" content="利用人工智能检查健康">
+        <meta name="description" content="ตรวจสุขภาพโดยใช้ปัญญาประดิษฐ์">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="naver-site-verification" content="9598d0e884181219be3deac3f06c3a65a3d95562" />
-        <meta property="og:title" content="利用人工智能面部识别进行健康检查" />
+        <meta property="og:title" content="สุขภาพร่างกายด้วยการควบคุม ประสาทรับรู้ด้วยปัญญาประดิษฐ์" />
         <meta property="og:url" content="https://biohealth.netlify.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://biohealth.netlify.app/img/photo.png">
-        <meta property="og:description" content="人工智能通过面部识别技术分析面部照片，提供可能引发该疾病的信息和改善方法。" />
+        <meta property="og:description" content="ที่ปัญญาประดิษฐ์ จะทําก็คือ การประมวลภาพใบหน้าด้วยเทคโนโลยีการจดจํา ที่ปัญญาประดิษฐ์สามารถทําได้ ให้ข้อมูลและการแก้ปัญหา ของสิ่งที่อาจจะเกิดขึ้นได้" />
         <title>Health AI</title>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02d0a9274c4624"></script>
         <!--JQuery latist-->
@@ -53,25 +53,25 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="english.html">English</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="japan.html">日本語</a>
+                        <a class="dropdown-item" href="japanese.html">日本語</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="chaina.html">中国</a>
+                        <a class="dropdown-item" href="chinese.html">中国</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="france.html">France</a>
+                        <a class="dropdown-item" href="franch.html">France</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="german.html">Deutschland</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="rusia.html">Россия</a>
+                        <a class="dropdown-item" href="russian.html">Россия</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="italia.html">italiano</a>
+                        <a class="dropdown-item" href="italian.html">italiano</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="vetnam.html">ViệtNam</a>
+                        <a class="dropdown-item" href="vietnamese.html">ViệtNam</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="tailand.html">ประเทศไทย</a>
+                        <a class="dropdown-item" href="thai.html">ประเทศไทย</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">有用的健康信息</a>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">ข้อมูลทางสุขภาพที่มีประโยชน์</a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -81,8 +81,8 @@
             </div>
         </nav>
         <section class="section">
-            <h1 class="title">通过认识面部进行健康检查</h1>
-            <h3 class="subtitle">健康是最重要的财产。 - 艾默生 -</h3>
+            <h1 class="title">ตรวจสุขภาพผ่านใบหน้า</h1>
+            <h3 class="subtitle">สุขภาพเป็นทรัพย์สินสูงสุด - ซัมเมอร์ซัน -</h3>
         </section>
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -91,14 +91,14 @@
                 <input class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*"/>
                 <div class="drag-text">
                     <img src="img/photo.png" class="mt-5 pt-5 upload">
-                    <h3 class="mb-5 pb-5 pt-4  upload-text">面部照片</h3>
+                    <h3 class="mb-5 pb-5 pt-4  upload-text">รูปหน้า</h3>
                 </div>
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="image" src="#" alt="your face image" />
                 <div id="loading" class="animated bounce">
                     <span>
-                        <p class="text-center">AI正在分析脸部照片。</p>
+                        <p class="text-center">AI กําลังทําการวิเคราะห์รูปภาพหน้าค่ะ</p>
                         <p class="items-center"><img src="img/emoji_25.gif" /></p>
                     </span>
                 </div>
@@ -108,18 +108,18 @@
                 <br>
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
-                        重新做
+                        ใหม่
                     </button>
                 </div>
             </div>
             <br>
-            <p class="tip"><b>使用未化妆的照片，可获得更准确的结果。</p>
+            <p class="tip">หากใช้รูปที่ไม่ได้แต่งหน้า ก็จะสามารถรับผลลัพธ์ที่แม่นยํายิ่งขึ้น</p>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>
         <br>
         <div id="exclamation">
-            <i>使用本服务时不能保存照片，不能用于医疗用途。</i>
+            <i>หากคุณใช้บริการนี้ไม่มีรูปภาพที่จะจัดเก็บและคุณไม่สามารถใช้เพื่อการรักษาพยาบาลได้</i>
         </div>
         <br>
         <div id="disqus_thread"></div>
@@ -229,44 +229,44 @@
 
                 switch (prediction[0].className) {
                     case 'healthy':
-                        result = '健康状况';
-                        explain = "<br>为了保持健康状态，请不要忘记有规律的习惯和运动~!";
-                        advice = "<br>健康的时候一定要遵守。 别忘了定期地健康检查。";
+                        result = 'สภาพสมบูรณ์';
+                        explain = "<br>อย่าลืมความชื้นและการเคลื่อนไหวอย่างสม่ําเสมอเพื่อรักษาสุขภาพของคุณ<br>";
+                        advice = "<br>สุขภาพต้องคงไว้ตอนที่สุขภาพแข็งแรงค่ะ อย่าลืมการตรวจสุขภาพเป็นประจํานะคะ<br>";
                         break;
                     case 'black':
-                        result= '黑色';
-                        explain = "<br>需要注意的疾病:末梢血液循环障碍、肾脏疾病";
-                        advice = "<br>为预防肾脏疾病，黑豆、玉米须茶、山药茶、山茱萸、覆盆子有助于预防浮肿，玉米须、当归、阴阳廓可防止脸部浮肿。<br> 可能会被阳光晒黑，长时间外出时请使用防晒霜。";
+                        result= 'สีน้ําตาลดํา';
+                        explain = "<br>โรคที่ต้องให้ความสนใจ: ความผิดปกติของระบบไหลเวียนโลหิตในเลือดล้มเหลว โรคร้ายทางไต<br>";
+                        advice = "<br>เพื่อป้องกันปัญหาทางไต ถั่วดํา หนวดข้าวโพด รถกลั่นน้ํามันเบนซิน น้ํามันโคลน โคลนนิ่ง โรคหนอง หยิน ช่วยลดความบวมที่หน้า<br>คุณสามารถใช้แสงเทพบุตรเอาไว้ ในบริเวณที่กว้างที่สุดเท่าที่เป็นไปได้<br>";
                         break;
                     case 'yellow':
-                        result = '黄菜';
-                        explain = "<br>肝脏或胆囊出现问题时，血液中胆红素的数值会增加，脸色会变黄。 并且与胃或十二指肠等消化器官有关。<br>需要注意的疾病:贫血、肝病、肝癌、胆石、胆囊炎、胆囊癌、胰脏炎、胰腺癌";
-                        advice = "<br>饮酒或睡眠不足与肝功能有关。 黄疸因胆汁色素不能顺利排出，会通过血液被吸收。 如果手、脚、眼白部位变黄，需要由医院通过相关检查进行专业医生的诊疗。 为了胃肠健康，规律饮食，经常喝黄芪茶、人参茶、白出茶、山楂茶等，对预防胃肠疾病很有帮助。";
+                        result = 'เสื้อเปลือย';
+                        explain = "<br>เมื่อตับและถุงน้ําดีมีปัญหา ปริมาณของบิลลี่ลูวินในเลือดจะเพิ่มขึ้น ทําให้ผิวเหลือง (เหลือง) นอกจากนี้ มันยังมีความเกี่ยวข้องกับระบบย่อยอาหาร เช่น กระเพาะอาหารอักเสบและอื่นๆ<br>โรคต่างๆที่ต้องให้ความสนใจ: เลือดจาง โรคมะเร็งตับ โรคมะเร็งตับ ถุงน้ําดี ถุงน้ําดี มะเร็งตับอ่อน<br>";
+                        advice = "<br>การขาดการดื่มเหล้าหรือนอน เป็นเรื่องที่เกี่ยวกับตับค่ะ สีของน้ําดีซ่านไม่กระจายออกง่ายๆ ดังนั้นมันจึงถูกดูดซึมเข้าสู่เลือด ถ้าคุณเปลี่ยนมือเท้า เท้า ตาจะกลายเป็นสีเหลือง คุณจะต้องมีหมอเฉพาะทางผ่านการตรวจที่เกี่ยวข้องในโรงพยาบาล<br>เพื่อสุขภาพของระบบทางเดินอาหารและเครื่องดื่มที่มีกฎเกณฑ์เป็นประจําเพื่อสุขภาพระบบทางเดินอาหารและการดื่มน้ําชาโสมบ่อยๆก็ได้ค่ะ<br>";
                         break;
                     case 'red':
-                        result = '面部红潮';
-                        explain = "<br>血液循环不畅时，血液和氧气无法供应体内的细胞和组织，导致血管扩张，导致面部变红。 <br>需要注意的疾病:心绞痛、心肌梗塞";
-                        advice = "<br>也有可能是高烧体质。 注意体征增加,通过伸展运动可预防肩部疼痛、头痛等症状,并改善血液循环。";
+                        result = 'สาหร่ายสีแดงบานเย็น';
+                        explain = "<br>เมื่อระบบไหลเวียนโลหิตไม่ราบรื่น เลือดและเนื้อเยื่อและออกซิเจนในร่างกายของเรายังไม่พอเพียง หลอดเลือดก็จะขยายตัวและจะทําให้ใบหน้าดูหมองคล้ํา <br>โรคที่ต้องระวัง: โรคหลอดเลือดตีบ โรคหลอดเลือดหัวใจ<br>";
+                        advice = "<br>มันยังเป็นไข้อยู่ มันจะช่วยป้องกันอาการต่างๆ เช่น การปวดไหล่ ปวดศีรษะ และพัฒนาการหมุนเวียนของเลือด<br>";
                         break;
                     case 'pale':
-                        result= '苍白';
-                        explain = "<br>脸上没有血色时可能会变得苍白。 贫血、肺炎、慢性支气管炎、肺癌等呼吸道功能不良时可能会出现。";
-                        advice = "<br>推荐通过森林浴经常呼吸清新空气。 通过摄取五味子、桔梗、杏核，使肺部变得坚实，使身体变得温暖，效果更佳。 <br> 作为参考，内脏出血时，因贫血会导致面部苍白，大便呈黑色。";
+                        result= 'หน้าซีด';
+                        explain = "<br>ผมจะซีดเผือดเมื่อหน้าเลือดหมด ระบบหายใจเช่นโรคโลหิตจาง ปอดบวม โรคหลอดลมอักเสบเรื้อรัง และมะเร็งปอด อาจเกิดขึ้นได้เมื่อฟังก์ชันทางเดินหายใจไม่ดีค่ะ<br>";
+                        advice = "<br>ฉันขอแนะนําให้คุณดื่มอากาศสะอาดโดยใช้การอาบน้ําป่า สามารถช่วยร่างกายให้อบอุ่นโดยรับประทานโอมิจา, รากโทราจิ, คุณซัลกุค เพื่อให้ปอดแข็งแรงค่ะ<br> แต่ในกรณีคุณเลือดออกภายใน, เยื่อตาขาวจะซีดเซียว, อุจจาระของคุณเป็นสีดํา<br>";
                         break;
                     case 'freckles':
-                        result = '黑痣和雀斑';
-                        explain = "<br>与解读陈旧废物的肝功能或因紫外线去除活性氧的能力下降有关。<br>";
-                        advice = "<br>外出时请考虑暴露在阳光下的时间，使用防晒霜。<br>";
+                        result = 'กระเดือกและกระตับ';
+                        explain = "<br>ซึ่งเกี่ยวข้องกับความสามารถในการกําจัดออกซิเจนที่เคลื่อนไหวอยู่ หรือด้วยน้ําเสียเอง ระหว่างความสามารถในการถอดรหัสสัญญาณรบกวน<br>";
+                        advice = "<br>ใช้ครีมกันแดดในการรับแสงแดดเวลาออกไปข้างนอก โดยพิจารณาระยะเวลาที่แสงแดดส่อง<br>";
                         break;
                     case 'darkcircle':
-                        result = '黑眼圈';
-                        explain = "<br>因过度疲劳或压力过大，需要休息和摄取充分的影响成分！ 或与血液循环有关。 <br> 需要注意的疾病:肾脏病<br>";
-                        advice = "<br>通过在眼周热敷、仔细卸妆、化妆或洗脸时不刺激眼周等可改善。<br>";
+                        result = 'ตาดํา';
+                        explain = "<br>ซึ่งมีผลต่อความเครียดมากๆ ทําให้คุณต้องเลิกดื่มและกินส่วนประกอบที่มีประสิทธิภาพ หรืออาจเกี่ยวข้อง กับวงจรเลือด<br>โรคที่ต้องระวัง: โรคไต<br>";
+                        advice = "<br>คุณสามารถปรับปรุงได้ด้วยการไม่กระตุ้นผิวพรรณ ทําความสะอาดผิวหน้าหรือการล้างหน้าอย่างพิถีพิถัน<br>";
                         break;
                     case 'default':
-                        result = '错误的结果';
-                        explain = "发生错误。";
-                        advice = "请下次再试一次!";
+                        result = 'ผลลัพธ์ไม่ถูกต้อง';
+                        explain = "เออเร่อขึ้นครับ โปรดลองใหม่อีกครั้งในภายหลังค่ะ!";
+                        advice = "โปรดลองใหม่อีกครั้งในภายหลังค่ะ!";
                         break;
                 }
                 var title = "<div class='" + prediction[0].className + "_title'>" + result + "</div>"
@@ -288,28 +288,28 @@
 
                     switch (prediction[i].className) {
                         case "healthy":
-                            labelTitle = "健康"
+                            labelTitle = "สุขภาพ"
                             break;
                         case "black":
-                            labelTitle = "黑色"
+                            labelTitle = "สีน้ําตาลดํา"
                             break;
                         case "yellow":
-                            labelTitle = "黄菜"
+                            labelTitle = "เสื้อเปลือย"
                             break;
                         case "red":
-                            labelTitle = "红晕"
+                            labelTitle = "เลือดฝาด"
                             break;
                         case "pale":
-                            labelTitle = "苍白"
+                            labelTitle = "หน้าซีด"
                             break;
                         case "freckles":
-                            labelTitle = "黑痣和雀斑"
+                            labelTitle = "กระเดือกและกระตับ"
                             break;
                         case "darkcircle":
-                            labelTitle = "黑眼圈"
+                            labelTitle = "ดาร์คเซอเคิล"
                             break;
                         default:
-                            labelTitle = "无法知道"
+                            labelTitle = "ไม่รู้จัก"
                 }
 
                 var label = "<div class='healthy-label d-flex align-items-center'>" + labelTitle + "</div>"
