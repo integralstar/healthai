@@ -7,14 +7,14 @@
         <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" > -->
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
-        <meta name="description" content="인공 지능을 이용한 건강 체크">
+        <meta name="description" content="Kiểm tra sức khỏe bằng trí tuệ nhân tạo">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="naver-site-verification" content="9598d0e884181219be3deac3f06c3a65a3d95562" />
-        <meta property="og:title" content="인공 지능 안면 인식을 이용한 건강 체크" />
+        <meta property="og:title" content="Kiểm tra sức khỏe bằng cách sử dụng nhận diện khuôn mặt nhân tạo" />
         <meta property="og:url" content="https://biohealth.netlify.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://biohealth.netlify.app/img/photo.png">
-        <meta property="og:description" content="인공지능이 안면 인식 기술을 통하여 얼굴 사진을 분석하고 그 질병의 원인이 될 수 있는 것들에 대한 정보와 개선 방법을 제공합니다." />
+        <meta property="og:description" content="Thông qua kỹ thuật nhận diện khuôn mặt, trí tuệ nhân tạo phân tích hình ảnh khuôn mặt và cung cấp thông tin và phương pháp cải thiện về những thứ có thể gây ra bệnh." />
         <title>Health AI</title>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f02d0a9274c4624"></script>
         <!--JQuery latist-->
@@ -71,10 +71,9 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">유용한 건강정보</a>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">thông tin sức khỏe hữu ích</a>
                 </li>
               </ul>
-              <iframe class="my-2 my-lg-1" src="https://coupa.ng/bFEVK2" width="10%" height="37" frameborder="0" scrolling="no"></iframe>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -82,8 +81,8 @@
             </div>
         </nav>
         <section class="section">
-            <h1 class="title">안면 인식을 통한 건강 체크</h1>
-            <h3 class="subtitle">건강은 제일의 재산이다 - 에머슨 -</h3>
+            <h1 class="title">Kiểm tra sức khỏe thông qua nhận diện khuôn mặt</h1>
+            <h3 class="subtitle">sức khỏe là tài sản lớn nhất - Emerson -</h3>
         </section>
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -92,14 +91,14 @@
                 <input class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*"/>
                 <div class="drag-text">
                     <img src="img/photo.png" class="mt-5 pt-5 upload">
-                    <h3 class="mb-5 pb-5 pt-4  upload-text">얼굴사진</h3>
+                    <h3 class="mb-5 pb-5 pt-4  upload-text">ảnh mặt</h3>
                 </div>
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="image" src="#" alt="your face image" />
                 <div id="loading" class="animated bounce">
                     <span>
-                        <p class="text-center">AI가 얼굴 사진을 분석하고 있습니다.</p>
+                        <p class="text-center">AI đang phân tích ảnh khuôn mặt.</p>
                         <p class="items-center"><img src="img/emoji_25.gif" /></p>
                     </span>
                 </div>
@@ -109,32 +108,19 @@
                 <br>
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="location.href='index.html'" class="try-again-btn">
-                        다시하기
+                        Làm lại
                     </button>
                 </div>
             </div>
             <br>
-            <p class="tip"><b>화장하지 않은 사진</b>을 이용하시면 더 정확한 결과를 얻을 수 있습니다.</p>
+            <p class="tip">Nếu sử dụng ảnh không trang điểm thì có thể nhận được kết quả chính xác hơn.</p>
 			<!— Go to www.addthis.com/dashboard to customize your tools —>
             <center><div class="addthis_inline_share_toolbox"></div></center>
         </div>
         <br>
         <div id="exclamation">
-            <i>본 서비스 이용 시 사진이 저장되지 않으며 의료 용도로 사용하실 수 없습니다.</i>
-        </div>
-        <br>
-        <div id="coupang-banner">
-            <script src="https://ads-partners.coupang.com/g.js"></script>
-            <script>new PartnersCoupang.G({ id:270081 });</script>
-        </div>
-		<br>
-		<div id="kakao-banner">
-            <ins class="kakao_ad_area" style="display:none;"
-                data-ad-unit    = "DAN-ubguhr7k8yt0"
-                data-ad-width   = "320"
-                data-ad-height  = "100"></ins>
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
+            <i>Khi sử dụng dịch vụ này, ảnh sẽ không được lưu trữ và không thể sử dụng cho mục đích y tế.</i>
+        </div>     
         <br>
         <div id="disqus_thread"></div>
         <script>
@@ -243,44 +229,44 @@
 
                 switch (prediction[0].className) {
                     case 'healthy':
-                        result = '건강한 상태';
-                        explain = "<br>건강 상태를 유지하기 위하여 규칙적인 습관과 운동을 잊지 마세요~!";
-                        advice = "<br>건강은 건강 할 때 지켜야 합니다. 주기적인 건강검진을 잊지 마세요.";
+                        result = 'tình trạng sức khỏe';
+                        explain = "<br>Đừng quên thói quen và tập thể dục đều đặn để duy trì tình trạng sức khỏe~!";
+                        advice = "<br>Phải giữ gìn sức khỏe khi còn khỏe. Đừng quên kiểm tra sức khỏe định kỳ.";
                         break;
                     case 'black':
-                        result= '검정빛';
-                        explain = "<br>주의해야 할 질병 : 말초혈액순환 장애, 신장질환";
-                        advice = "<br>신장 질환을 예방하기 위해 검은콩, 옥수수수염차, 산약차, 산수유, 복분자가 도움이 되며 옥수수수염, 당귀, 음양곽은 얼굴이 붓는 것을 막아줍니다. <br> 햇빛에 그을렸을 수도 있으니 장시간 외출 시에 자외선 차단 크림을 사용해 보세요.";
+                        result= 'màu đen';
+                        explain = "<br>Bệnh cần chú ý: rối loạn tuần hoàn máu ngoại biên, bệnh thận";
+                        advice = "<br>Để ngăn ngừa bệnh thận, đậu đen, trà râu ngô, trà thảo dược, dầu sơn và phúc bồn tử giúp ngăn chặn mặt sưng lên. <br> Vì có thể bị cháy nắng nên hãy thử sử dụng kem chống nắng khi đi ra ngoài trong thời gian dài.";
                         break;
                     case 'yellow':
-                        result = '누런끼';
-                        explain = "<br>간이나 담낭(쓸개)에 문제가 생기면 혈액 내 빌리루빈의 수치가 증가하며 안색을 노랗게(황달) 만듭니다. 또한 위나 십이지장 등의 소화기관에 관계가 있습니다.<br>주의해야 할 질병들 : 빈혈, 간질환, 간암, 담석, 담낭염, 담낭암, 췌장염, 췌장암";
-                        advice = "<br>음주나 수면 부족이 간 기능과 연관이 있습니다. 황달은 담즙 색소가 원활하게 배출되지 않아 혈액으로 흡수되며 생깁니다. 손, 발, 눈 흰자위가 노랗게 변하게 되다면 병원에서 관련 검사를 통한 전문의의 진료가 필요합니다.<br> 위장 건강을 위해 규칙적인 식사를 하시고 황기차, 인삼차, 백출차, 산사차를 자주 마시는 것이 도움이 됩니다.";
+                        result = 'vàng bạc';
+                        explain = "<br>Nếu có vấn đề về gan hoặc túi mật (thổi) thì nồng độ bilirubin trong máu sẽ tăng lên và làm cho mặt bạn vàng (thiên vàng). Ngoài ra, nó có liên quan đến các cơ quan tiêu hóa như dạ dày hoặc dụng cụ dục nhị phân.<br>Các bệnh cần chú ý: thiếu máu, bệnh gan, ung thư gan, sỏi mật, viêm túi mật, ung thư tuyến tụy, ung thư tuyến tụy, ung thư tuyến tụy, ung thư tuyến tụy";
+                        advice = "<br>Việc uống rượu hoặc thiếu ngủ có liên quan đến chức năng gan. Cá mập vàng không được thải ra một cách suôn sẻ và được hấp thụ vào máu. Nếu lòng trắng tay, chân, mắt chuyển sang màu vàng thì cần phải được bác sĩ chuyên khoa kiểm tra liên quan tại bệnh viện<br> Để đảm bảo sức khỏe dạ dày, bạn nên ăn uống thường xuyên trà vàng, trà nhân sâm, trà trắng, trà sâm núi.";
                         break;
                     case 'red':
-                        result = '안면홍조';
-                        explain = "<br>혈액 순환이 원활하지 않을 경우 체내 세포와 조직에 피와 산소가 충분히 공급되지 않아서 혈관이 확장되고 이로 인하여 얼굴이 불그스름 해 질 수 있습니다. <br>주의해야 할 질병들:협심증, 심근경색";
-                        advice = "<br>열이 많은 체질 일 수도 있습니다. 체증 증가에 신경쓰시고 스트레칭을 통한 어깨결림, 두통 등과 같은 증상을 예방하며 혈액 순환을 개선할 수 있습니다.";
+                        result = 'đỏ mặt';
+                        explain = "<br>Nếu lưu thông máu không được tốt, máu và oxy không được cung cấp đầy đủ cho các tế bào và tổ chức trong cơ thể nên mạch máu có thể được mở rộng và do đó mặt có thể đỏ lên. <br>Những bệnh cần chú ý: chứng khó chịu, nhồi máu cơ tim";
+                        advice = "<br>Có thể là cơ thể bị sốt cao. Bạn có thể chú ý đến việc tăng cơ thể, tránh các triệu chứng như căng vai, đau đầu và cải thiện lưu thông máu.";
                         break;
                     case 'pale':
-                        result= '창백함';
-                        explain = "<br>얼굴에 핏기가 없을 때 창백해 질 수 있습니다. 빈혈, 폐렴, 만성 기관지염, 폐암과 같은 호흡기 기능이 좋지 않을 때 나타날 수 있습니다.";
-                        advice = "<br>삼림욕을 통해 맑은 공기를 자주 마시는 것을 추천해 드립니다. 폐를 튼튼하게 하기 위한 오미자, 도라지, 살구씨 섭취를 통해 몸을 따뜻하게 해 주시면 도움이 됩니다. <br> 참고로 내장 출혈이 있는 경우에도 빈혈로 안면이 창백해 질 수 있으며 대변은 검은색이 됩니다.";
+                        result= 'sự xanh xao';
+                        explain = "<br>Khi mặt bạn không có màu sắc thì có thể tái nhợt nhạt. Có thể xảy ra khi chức năng hô hấp như thiếu máu, viêm phổi, viêm phế quản mãn tính, ung thư phổi không tốt.";
+                        advice = "<br>Tôi khuyên bạn nên thường xuyên hít thở không khí trong lành thông qua việc tắm rừng. Giúp cơ thể ấm lên thông qua việc hấp thụ ngũ cốc, rễ chuông và hạt mơ để làm cho phổi khỏe mạnh. <br> Tham khảo thêm, ngay cả khi bạn bị chảy máu nội tạng, mặt bạn có thể nhợt nhạt vì thiếu máu và phân của bạn cũng có màu đen.";
                         break;
                     case 'freckles':
-                        result = '기미와 주근깨';
-                        explain = "<br>노폐물을 해독하는 간 기능이나 자외선으로 인한 활성 산소를 제거하는 능력이 저하 되는 것과 관련이 있습니다.<br>";
-                        advice = "<br>외출 시 햇빛에 노출 되는 시간을 고려하여 자외선 차단 크림을 사용하세요.<br>";
+                        result = 'tàn nhang và tàn nhang';
+                        explain = "<br>Nó liên quan đến việc chức năng gan giải mã chất thải hoặc khả năng loại bỏ oxy hoạt động do tia cực tím.<br>";
+                        advice = "<br>Hãy sử dụng kem chống nắng để xem xét thời gian phơi nắng khi đi ra ngoài.<br>";
                         break;
                     case 'darkcircle':
-                        result = '다크써클';
-                        explain = "<br>과로나 스트레스에 의한 영향으로<b>휴식</b>과 충분한 영향분 섭취가 필요합니다! 혹은 혈액순환과 관련이 있을 수 있습니다. <br> 주의해야 할 질병 : 신장병<br>";
-                        advice = "<br>눈가에 온찜질, 메이크업 꼼꼼히 지우기, 화장 또는 세안 시 눈가에 자극 주지 않기 등을 통하여 개선 할 수 있습니다.<br>";
+                        result = 'quầng thâm';
+                        explain = "<br>Cần nghỉ ngơi do quá sức hoặc căng thẳng và hấp thụ đủ lượng tác động! Hoặc có thể liên quan đến tuần hoàn máu.<br> Bệnh cần chú ý: Bệnh thận<br>";
+                        advice = "<br>Bạn có thể cải thiện nó thông qua việc chườm nóng quanh mắt, tẩy trang kỹ lưỡng hoặc rửa mặt để không gây kích thích cho vùng mắt.<br>";
                         break;
                     case 'default':
-                        result = '잘못된결과';
-                        explain = "에러가 발생했습니다. 나중에 다시 시도하여 주세요!";
-                        advice = "나중에 다시 시도하세요!";
+                        result = 'kết quả sai lầm';
+                        explain = "Đã xảy ra lỗi. ";
+                        advice = "sau này hãy thử lại nhé!";
                         break;
                 }
                 var title = "<div class='" + prediction[0].className + "_title'>" + result + "</div>"
@@ -302,28 +288,28 @@
 
                     switch (prediction[i].className) {
                         case "healthy":
-                            labelTitle = "건강"
+                            labelTitle = "sức khỏe"
                             break;
                         case "black":
-                            labelTitle = "검정빛깔"
+                            labelTitle = "màu đen"
                             break;
                         case "yellow":
-                            labelTitle = "누런끼"
+                            labelTitle = "vàng bạc"
                             break;
                         case "red":
-                            labelTitle = "홍조"
+                            labelTitle = "sự đỏ mạc"
                             break;
                         case "pale":
-                            labelTitle = "창백함"
+                            labelTitle = "sự xanh xao"
                             break;
                         case "freckles":
-                            labelTitle = "기미와 주근깨"
+                            labelTitle = "tàn nhang và tàn nhang"
                             break;
                         case "darkcircle":
-                            labelTitle = "다크서클"
+                            labelTitle = "quầng thâm mắt"
                             break;
                         default:
-                            labelTitle = "알 수 없음"
+                            labelTitle = "Không thể biết được"
                 }
 
                 var label = "<div class='healthy-label d-flex align-items-center'>" + labelTitle + "</div>"
@@ -341,9 +327,6 @@
         </footer>
     </body>
 </html>
-<!--
-파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
--->
 <!--Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
