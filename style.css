@@ -1,7 +1,15 @@
+@font-face { 
+  font-family: 'Bazzi'; 
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff') format('woff'); 
+  font-weight: normal; 
+  font-style: normal; 
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Bazzi';
   background-color: #ffffff;
 }
+
 .nav-distance {
     padding: 2.1% 7.7%;
 }
@@ -21,12 +29,14 @@ body {
 }
 
 .title {
+  font-family: 'Bazzi';
   line-height: 1.67;
   text-align: center;
   color: #35465d;
 }
 
 .subtitle {
+  font-family: 'Bazzi';
   line-height: 1.53;
   text-align: center;
   color: #35465d;
@@ -38,7 +48,7 @@ body {
 
 .upload-text {
   width: 58%;
-  font-family: NanumSquareR;
+  font-family: 'Bazzi';
   font-size: 1.5rem;
   line-height: 1.53;
   text-align: center;
@@ -47,16 +57,16 @@ body {
 }
 
 .file-upload {
-  padding: 5% 12%;
-  margin: 0 auto;
+  padding: 5% 5%;
   border-radius: 10px;
   border: solid 1.5px #f6f7fa;
   background-color: #edfffc;
 }
 
 .file-upload-content {
-display: none;
-text-align: center;
+  font-family: 'Bazzi';
+  display: none;
+  text-align: center;
 }
 
 .file-upload-input {
@@ -92,62 +102,73 @@ color: #222;
 }
 
 .drag-text {
-text-align: center;
+  font-family: 'Bazzi';
+  text-align: center;
 }
 
 .drag-text h3 {
-font-weight: 500;
-text-transform: uppercase;
+  font-family: 'Bazzi';
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .file-upload-image {
-max-height: 640px;
-max-width: 360px;
-margin: auto;
+  max-height: 640px;
+  max-width: 360px;
+  margin: auto;
 }
 
 .healthy_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: green;
 }
 
 .black_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: black;
 }
 
 .yellow_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: yellow;
 }
 
 .red_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: red;
 }
 
 .pale_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: blue;
 }
 
 .freckles_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: brown;
 }
 
 .darkcircle_title {
+  font-family: 'Bazzi';
   text-align: center;
   color: black;
 }
 
 .explain {
+  font-family: 'Bazzi';
   line-height: 1.0;
   text-align: center;
   color: rgb(216, 18, 166);
 }
 
 .advice {
+  font-family: 'Bazzi';
   line-height: 1.0;
   color: rgb(81, 158, 221);
 }
@@ -276,20 +297,24 @@ margin: auto;
   background-color: rgb(0, 0, 0);
 }
 .percent-text {
+  font-family: 'Bazzi';
   font-size: 1rem;
   color: #ffffff;
 }
 .healthy-label {
-    width: 20%;
-    text-align: left;
-    height: 2rem;
+  font-family: 'Bazzi';
+  width: 20%;
+  text-align: left;
+  height: 2rem;
 }
 #label-container {
-    width: 70%;
-    margin: 0 auto;
+  font-family: 'Bazzi';
+  width: 70%;
+  margin: 0 auto;
 }
 .result-message {
-    font-size: 2rem;
+  font-family: 'Bazzi';
+  font-size: 2rem;
 }
 
 label {
@@ -303,6 +328,7 @@ label {
 }
 
 #exclamation {
+  font-family: 'Bazzi';
   text-align: center;
 }
 
@@ -324,18 +350,22 @@ label {
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
   html {
+    font-family: 'Bazzi';
     font-size: 10px;
   }
     .navbar-brand {
-        font-size: 2rem;
+      font-family: 'Bazzi';
+      font-size: 2rem;
     }
 }
 
 .tip {
+  font-family: 'Bazzi';
   text-align: center;
   color: #4f5de4;
 }
 
 .border-b {
+  font-family: 'Bazzi';
   text-align: center;
 }
