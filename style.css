@@ -101,10 +101,10 @@ text-transform: uppercase;
 }
 
 .file-upload-image {
-max-height: 780px;
-max-width: 780px;
+max-height: 640px;
+max-width: 360px;
 margin: auto;
-padding: 20px;
+padding: 5px;
 }
 
 .healthy_title {
